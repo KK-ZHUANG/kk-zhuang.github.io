@@ -1,0 +1,34 @@
+.site-ele
+{
+  border: 1px solid #eee;
+  padding: 20px;
+  transition:box-shadow 0.5s;
+}
+
+.site-ele:hover {
+  box-shadow:2px 2px 10px #bbb;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1.5s, margin-top 0.8s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  margin-top: 20px;
+}
+
+.cover {
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.cover-svg {
+  opacity: 0.5;
+  width: 50%;
+  height: 50%;
+  margin-top: 10%;
+  margin-left: 25%;
+}

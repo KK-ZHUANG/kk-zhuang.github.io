@@ -4,17 +4,38 @@
   {%- include head.html -%}
 
   <body>
-
-    {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
+    <div id="el">
+      <div class="cover" v-show="cover">
+        <img class="cover-svg" src="{{ '/assets/loading.svg' | relative_url }}" />
       </div>
-    </main>
 
-    {%- include footer.html -%}
+      <transition name="fade">
+        <div v-show="show">
+          {%- include header.html -%}
 
+          <main class="page-content" aria-label="Content">
+            <div class="wrapper">
+              {{ content }}
+            </div>
+          </main>
+
+          {%- include footer.html -%}
+        </div>
+      </transition>
+    </div>
   </body>
-
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<script>
+new Vue({
+  el : '#el',
+  data : {
+    show : false,
+    cover : true
+  },
+  mounted : function(){
+    this.cover = false
+    this.show = true
+  },
+})
+</script>
 </html>
