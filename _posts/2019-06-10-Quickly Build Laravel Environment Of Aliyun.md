@@ -32,6 +32,7 @@ find / -name nginx.conf #本次位置为/etc/nginx/nginx.conf
 location / {
     root   html;
     index  index.php index.html index.htm;
+    try_files $uri $uri/ /index.php?$query_string;
 }
 ...
 ...
